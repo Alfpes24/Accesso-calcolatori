@@ -6,7 +6,7 @@ function login() {
   const pw = document.getElementById('password').value;
   if (pw === passwordCorretta) {
     sessionStorage.setItem("autenticato", "true");
-    localStorage.setItem("accessoGipo", "ok"); // ✅ Autorizza Gipo
+    localStorage.setItem("accesso_consentito", "ok"); // ✅ Autorizza Gipo
     localStorage.setItem("accessoMioDottore", "ok"); // ✅ Autorizza MioDottore
     mostraContenuto();
   } else {
