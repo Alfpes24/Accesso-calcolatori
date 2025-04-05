@@ -6,7 +6,8 @@ function login() {
   const pw = document.getElementById('password').value;
   if (pw === passwordCorretta) {
     sessionStorage.setItem("autenticato", "true");
-    localStorage.setItem("accessoGipo", "ok"); // ✅ Aggiunto per accesso GipoNext
+    localStorage.setItem("accessoGipo", "ok"); // ✅ Autorizza Gipo
+    localStorage.setItem("accessoMioDottore", "ok"); // ✅ Autorizza MioDottore
     mostraContenuto();
   } else {
     document.getElementById('errorMsg').innerText = "Password errata!";
