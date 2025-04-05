@@ -4,98 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Scegli una piattaforma</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #f0f4f8;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
-
-    h1 {
-      margin-bottom: 40px;
-      color: #333;
-      font-size: 28px;
-    }
-
-    .button-container {
-      display: none; /* viene mostrata solo dopo il login */
-      gap: 50px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .logo-button {
-      border: none;
-      background-color: white;
-      border-radius: 14px;
-      padding: 25px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      cursor: pointer;
-    }
-
-    .logo-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-    }
-
-    .logo-button img {
-      width: 120px;
-      height: auto;
-    }
-
-    .login-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-    }
-
-    input[type="password"] {
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-      width: 220px;
-    }
-
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    .error {
-      color: red;
-      font-size: 14px;
-    }
-
-    @media (max-width: 600px) {
-      .button-container {
-        flex-direction: column;
-        gap: 25px;
-      }
-
-      .logo-button img {
-        width: 100px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css"> <!-- ✅ CSS esterno -->
 </head>
 <body>
   <h1>Scegli una piattaforma</h1>
@@ -108,13 +17,13 @@
 
   <div class="button-container" id="links">
     <a href="https://alfpes24.github.io/GipoTest/" target="_blank" class="logo-button">
-      <img src="https://gdm-catalog-fmapi-prod.imgix.net/ProductLogo/079d22f4-0591-4a30-b596-8777ce832fcc.png?w=90&h=90&fit=max&dpr=3&auto=format&q=50" alt="GipoNext">
+      <img src="https://gdm-catalog-fmapi-prod.imgix.net/ProductLogo/079d22f4-0591-4a30-b596-8777ce832fcc.png" alt="GipoNext">
     </a>
     <a href="https://alfpes24.github.io/MioDottore-per-cliniche-prezzi/" target="_blank" class="logo-button">
       <img src="https://prowly-prod.s3.eu-west-1.amazonaws.com/uploads/4818/assets/40124/miodottore-mktpl-symbol-turquoise.png" alt="MioDottore">
     </a>
   </div>
 
-  <script src="accesso.js"></script>
+  <script src="script.js"></script> <!-- ✅ Nome corretto -->
 </body>
 </html>
