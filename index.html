@@ -25,7 +25,7 @@
     }
 
     .button-container {
-      display: flex;
+      display: none; /* nascosta finché non autorizzato */
       gap: 50px;
       flex-wrap: wrap;
       justify-content: center;
@@ -51,6 +51,40 @@
       height: auto;
     }
 
+    .login-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      width: 220px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+
     @media (max-width: 600px) {
       .button-container {
         flex-direction: column;
@@ -65,7 +99,14 @@
 </head>
 <body>
   <h1>Scegli una piattaforma</h1>
-  <div class="button-container">
+
+  <div class="login-container" id="login">
+    <input type="password" id="password" placeholder="Inserisci la password">
+    <button onclick="login()">Accedi</button>
+    <div class="error" id="errorMsg"></div>
+  </div>
+
+  <div class="button-container" id="links">
     <a href="https://alfpes24.github.io/GipoTest/" target="_blank" class="logo-button">
       <img src="https://gdm-catalog-fmapi-prod.imgix.net/ProductLogo/079d22f4-0591-4a30-b596-8777ce832fcc.png?w=90&h=90&fit=max&dpr=3&auto=format&q=50" alt="GipoNext">
     </a>
@@ -73,5 +114,29 @@
       <img src="https://prowly-prod.s3.eu-west-1.amazonaws.com/uploads/4818/assets/40124/miodottore-mktpl-symbol-turquoise.png" alt="MioDottore">
     </a>
   </div>
+
+  <script>
+    const passwordCorretta = "preventivo123"; // Cambiala a tuo piacimento
+
+    function login() {
+      const pw = document.getElementById('password').value;
+      if (pw === passwordCorretta) {
+        sessionStorage.setItem("autenticato", "true");
+        mostraContenuto();
+      } else {
+        document.getElementById('errorMsg').innerText = "Password errata!";
+      }
+    }
+
+    function mostraContenuto() {
+      document.getElementById('login').style.display = 'none';
+      document.getElementById('links').style.display = 'flex';
+    }
+
+    // Se già autenticato, mostra i link direttamente
+    if (sessionStorage.getItem("autenticato") === "true") {
+      mostraContenuto();
+    }
+  </script>
 </body>
 </html>
