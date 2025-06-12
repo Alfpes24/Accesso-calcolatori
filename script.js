@@ -1,5 +1,5 @@
 // Password da usare per accedere alla pagina
-const passwordCorretta = "preventivo123"; // Modifica a tuo piacere
+const passwordCorretta = "preventivo2025"; // Modifica a tuo piacere
 
 // Funzione per login
 function login() {
